@@ -1,8 +1,3 @@
-import groovy.json.JsonSlurperClassic
-
-def jsonParse(def json) {
-    new groovy.json.JsonSlurperClassic().parseText(json)
-}
 pipeline {
   agent { label 'main' }
   environment {
@@ -19,18 +14,4 @@ pipeline {
       }
     }
   }
-  post {
-      always {          
-          deleteDir()
-           sh "echo 'fase always'"
-      }
-      success {
-            sh "echo 'fase success'"
-        }
-
-      failure {
-            sh "echo 'fase failure'"
-      }
-      
-  }
-}  
+}
