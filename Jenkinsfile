@@ -11,7 +11,7 @@ pipeline {
      
       steps {
           script {			
-           sh "echo 'hola mundo'"
+           sh "docker --version"
         }
       }
     }
