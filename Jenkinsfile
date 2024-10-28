@@ -5,6 +5,10 @@ def jsonParse(def json) {
 }
 pipeline {
  agent any
+     docker {
+            image 'maven:3.8.1-jdk-11' // imagen Docker necesaria
+            args '-v /var/run/docker.sock:/var/run/docker.sock' // monta el socket Docker
+        }
  stages {
 
  stage("paso 1"){
